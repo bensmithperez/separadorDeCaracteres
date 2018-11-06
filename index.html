@@ -8,7 +8,7 @@
 		<script>
 			var textoCompleto = "";
 			var textoProcesado = "";
-
+			var caracteresExcluidos = "，。？-1234567890\r\n ";
 			function procesar(){
 				var textoCompleto = document.getElementById("caracteres").value;
 				textoCompleto.split('').forEach(c => limpiar(c));
@@ -16,10 +16,17 @@
 			}
 
 			function limpiar(c){
-				if (textoProcesado.indexOf(c) > -1){
-				} else {
-					textoProcesado = textoProcesado+c;
+				if (caracteresExcluidos.indexOf(c) < 0){
+					if (textoProcesado.indexOf(c) > -1){
+						
+					} else {
+						textoProcesado = textoProcesado+c+"\r\n";
+						transliterar(c);
+					}
 				}
+			}
+			function transliterar(c){
+				//transliterar...
 			}
 		</script>
 		<p><b>Explicación:</b> Un script para buscar todos los caracteres únicos en un texto... (lo uso para chino).</p>
