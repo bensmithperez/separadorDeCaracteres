@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Separador de caracteres</title>
+	</head>
+	<body>
+		<script>
+			var textoCompleto = "";
+			var textoProcesado = "";
+
+			function procesar(){
+				var textoCompleto = document.getElementById("caracteres").value;
+				textoCompleto.split('').forEach(c => limpiar(c));
+				document.getElementById("resultado").value = textoProcesado;
+			}
+
+			function limpiar(c){
+				if (textoProcesado.indexOf(c) > -1){
+				} else {
+					textoProcesado = textoProcesado+c;
+				}
+			}
+		</script>
+		<p><b>Explicación:</b> Un script para buscar todos los caracteres únicos en un texto... (lo uso para chino).</p>
+		<p><b>Falta:</b><br>
+		<ul>
+			<li>cantidad de caracteres iniciales</li>
+			<li>duplicados</li>
+			<li>caracteres al final</li>
+			<li>poner uno por linea</li>
+			<li>agregar definicion de caracteres</li>
+			<li>ignorar signos de puntuación</li>
+			<li>diseño gráfico... (?</li>
+		</ul>
+		</p>
+		Ingresar todo el texto:<br>
+		<textarea id="caracteres" rows="10" cols="30"></textarea><br>
+		<button type="button" onclick="procesar()">Procesar!</button><br>
+		Resultado:<br>
+		<textarea id="resultado" rows="10" cols="30"></textarea><br>
+	</body>
+</html>
